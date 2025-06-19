@@ -85,3 +85,19 @@ TEST_CASE(TestStruct)
     VectorPoint point2 = {3, 3};
     ASSERT_EQ(arr[1], point2);
 }
+
+TEST_CASE(TestCapacity)
+{
+    DynamicArray<int> arr;
+
+    arr.Resize(5);
+
+    ASSERT_EQ(arr.GetSize(), 5);
+    ASSERT_EQ(arr.GetCapacity(), 8);
+    
+
+    arr.Resize(16);
+
+    ASSERT_EQ(arr.GetSize(), 16);
+    ASSERT_EQ(arr.GetCapacity(), 32);
+}

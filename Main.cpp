@@ -11,5 +11,6 @@ int main()
     RUN_TEST(TestString);
     RUN_TEST(TestFloat);
     RUN_TEST(TestStruct);
+    RUN_TEST(TestCapacity);
     return 0;
 }

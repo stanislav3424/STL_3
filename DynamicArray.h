@@ -21,7 +21,7 @@ private:
         else
             NewCapacity = CurrentCapacity;
 
-        while (NewCapacity < MinimumCapacity)
+        while (NewCapacity <= MinimumCapacity)
             NewCapacity *= 2;
 
         ElementType* newData = new ElementType[NewCapacity];
@@ -40,6 +40,8 @@ public:
 
     void Resize(int NewSize)
     {
+        if (NewSize < 0)
+            return;
         if (NewSize > CurrentCapacity)
             IncreaseCapacity(NewSize);
         ElementCount = NewSize;
